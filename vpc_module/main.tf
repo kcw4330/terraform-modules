@@ -25,5 +25,8 @@ resource "aws_subnet" "this" {
   vpc_id            = aws_vpc.tf_vpc.id
   cidr_block        = each.value.cidr
   availability_zone = each.value.az
-  tags = { Name = each.value.name }
+
+  tags = {
+    Name = each.value.name
+  }
 }
