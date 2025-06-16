@@ -19,3 +19,11 @@ resource "aws_internet_gateway" "tf_igw" {
   }
 }
 
+resource "aws_subnet" "this" {
+  for_each = { for sn in var.subnets : sn.name => sn }
+
+  vpc_id            = aws_vpc.tf_vpc.id
+  cidr_block        = each.value.cidr
+  availability_zone = each.value.az
+  tags = { Name = each.value.name }
+}
