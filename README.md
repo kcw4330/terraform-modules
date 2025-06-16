@@ -1,2 +1,2 @@
-# terraform-moudules
+# terraform-modules
 ·AWS-Modules
