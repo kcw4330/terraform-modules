@@ -13,4 +13,5 @@ variable "subnets" {
     cidr = string
     az   = string
   }))
+default = []
 }
